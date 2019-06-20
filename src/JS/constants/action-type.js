@@ -1,0 +1,2 @@
+export const GIVE_ARTIST = "GIVE_ARTIST";
+export const GIVE_ARTISTLIST = "GIVE_ARTISTLIST";

@@ -14,3 +14,8 @@ li {
     display: inline-block;
     margin: 0 10px;
 }
+
+.inputArt{
+    border-radius: 10px;
+    width: 500px;
+}

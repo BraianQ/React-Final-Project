@@ -1,10 +1,25 @@
-.main-view {
-  text-align: center;
+.Header{
+  display: inline-flex;
+  width: 100%;
+}
+
+.titlespoti {
+  margin-right: 500px;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.searchbar .inputArt{
+  margin-left: 150px;
 }
 
 .main-view__logo {
+  margin-left: 30%;
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 75px;
 }
 
 .main-view__header {
