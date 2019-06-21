@@ -1,11 +1,29 @@
-import { GIVE_ARTIST } from '../constants/action-type';
+import { GIVE_ARTIST, GIVE_ARTISTLIST } from '../constants/action-type';
 
 export function getArtist(data) {
     return { type: GIVE_ARTIST , payload:data}
 }
 
 export function getArtistList(data){
-    console.log("EXTRANAMENTE ESTOY ACA")
+    let artists = [];
+    if (data.response.artists.items != null){
+    data.response.artists.items.forEach(item => {
+      let image;
+      if (item.images.length) {
+        image = item.images[0].url;
+      }
+      let count = 0;
+      artists[count] = {
+        id: item.id,
+        img: image,
+        name: item.name,
+        genre: item.genres
+      };count = count + 1})
+    } else {artists = []}
+  return {
+    type: GIVE_ARTISTLIST,
+    payload: artists
+  }
 }
 
 export function connectAPI(data , callback) {
@@ -13,11 +31,10 @@ export function connectAPI(data , callback) {
             const response = await fetch(data, {
             method: 'GET',
             headers: {
-              'Authorization': 'Bearer BQCKvcsyDey5E5djxjGkL_MUpIPVIAbmfP3yKzrtw_EXMfrYqdcwkK_jwbicbo1_-UkPedLFNowjN4-6HAWnka9nbP850M50Myus1B3ittlpr4UUolMyFNwh4l99vacMSMxGXk3pyAvwGTmFAYQosM6TYZBzD-JiNm6oJ0HRu_DXk3s891iT',
+              'Authorization': 'Bearer BQBFvbekPmwaWPS8EbK-n69s9BZYtEoTMK0dfGQLel1nSSdS-M4os0mQK1bkqSl8_ZhCacuYp71gPcLJxo0FKW1pxYOUj7NlGRydpNCT3WkYUl06AD1fDvzar6-XK3ObfjvTVYHQooZSxmhyUm7QQAUrCuSsGvsfiHb9sngP2graRN36uCAr',
             }
           });
           const responseJson = await response.json();
-          console.log(responseJson);
           dispatch(callback({response:responseJson}));
     }
 }
