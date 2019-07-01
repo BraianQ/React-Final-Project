@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.SearchH {
+  margin-left: 40%;
+}
+
 .titlespoti {
   margin-right: 500px;
 }
@@ -27,6 +31,20 @@
   height: 150px;
   padding: 20px;
   color: white;
+}
+
+.Artist{
+  display: inline-flex;
+}
+
+.ArtistContainer{
+  width: 100%;
+  height: 150px;
+}
+
+.ArtistImg{
+  width: 100px;
+  height: 100px;
 }
 
 @keyframes App-logo-spin {

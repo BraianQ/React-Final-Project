@@ -31,7 +31,7 @@ class Input extends Component{
                 this.changeState()}}
         if ( this.state.moveon === true)
            return (
-           < Redirect push to='/artistlist/' /> 
+           <Redirect push to='/artistlist/' /> 
            )
         return(
             <input 
